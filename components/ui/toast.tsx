@@ -30,8 +30,8 @@ const toastVariants = cva(
     variants: {
       variant: {
         default: "border bg-white text-slate-950 dark:bg-slate-950 dark:text-slate-50",
-        danger:
-          "danger group border-red-500 bg-red-500 text-slate-50 dark:border-red-900 dark:bg-red-900 dark:text-slate-50",
+        button:
+        "button group border-red-500 bg-red-500 text-slate-50 dark:border-red-900 dark:bg-red-900 dark:text-slate-50",
       },
     },
     defaultVariants: {
@@ -62,7 +62,7 @@ const ToastAction = React.forwardRef<
   <ToastPrimitives.Action
     ref={ref}
     className={cn(
-      "inline-flex h-8 shrink-0 items-center justify-center rounded-md border border-slate-200 bg-transparent px-3 text-sm font-medium ring-offset-white transition-colors hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.danger]:border-slate-100/40 group-[.danger]:hover:border-red-500/30 group-[.danger]:hover:bg-red-500 group-[.danger]:hover:text-slate-50 group-[.danger]:focus:ring-red-500 dark:border-slate-800 dark:ring-offset-slate-950 dark:hover:bg-slate-800 dark:focus:ring-slate-300 dark:group-[.danger]:border-slate-800/40 dark:group-[.danger]:hover:border-red-900/30 dark:group-[.danger]:hover:bg-red-900 dark:group-[.danger]:hover:text-slate-50 dark:group-[.danger]:focus:ring-red-900",
+      "inline-flex h-8 shrink-0 items-center justify-center rounded-md border border-slate-200 bg-transparent px-3 text-sm font-medium ring-offset-white transition-colors hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.button]:border-slate-100/40 group-[.button]:hover:border-red-500/30 group-[.button]:hover:bg-red-500 group-[.button]:hover:text-slate-50 group-[.button]:focus:ring-red-500 dark:border-slate-800 dark:ring-offset-slate-950 dark:hover:bg-slate-800 dark:focus:ring-slate-300 dark:group-[.button]:border-slate-800/40 dark:group-[.button]:hover:border-red-900/30 dark:group-[.button]:hover:bg-red-900 dark:group-[.button]:hover:text-slate-50 dark:group-[.button]:focus:ring-red-900",
       className
     )}
     {...props}
@@ -77,7 +77,7 @@ const ToastClose = React.forwardRef<
   <ToastPrimitives.Close
     ref={ref}
     className={cn(
-      "absolute right-2 top-2 rounded-md p-1 text-slate-950/50 opacity-0 transition-opacity hover:text-slate-950 focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.danger]:text-red-300 group-[.danger]:hover:text-red-50 group-[.danger]:focus:ring-red-400 group-[.danger]:focus:ring-offset-red-600 dark:text-slate-50/50 dark:hover:text-slate-50",
+      "absolute right-2 top-2 rounded-md p-1 text-slate-950/50 opacity-0 transition-opacity hover:text-slate-950 focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.button]:text-red-300 group-[.button]:hover:text-red-50 group-[.button]:focus:ring-red-400 group-[.button]:focus:ring-offset-red-600 dark:text-slate-50/50 dark:hover:text-slate-50",
       className
     )}
     toast-close=""
