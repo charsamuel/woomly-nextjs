@@ -12,16 +12,14 @@ import MeetingSetup from '@/components/MeetingSetup';
 import MeetingRoom from '@/components/MeetingRoom';
 
 const MeetingPage = () => {
-  const params = useParams();
-  const id = params?.id as string | undefined; // `id` could be undefined
+  const { id } = useParams() as { id?: string };
   const { isLoaded, user } = useUser();
   
-  // Only call useGetCallById if `id` is defined
-  const { call, isCallLoading } = id ? useGetCallById(id) : { call: null, isCallLoading: false };
-  
+  // Call useGetCallById unconditionally, handling undefined `id` inside the hook
+  const { call, isCallLoading } = useGetCallById(id);
+
   const [isSetupComplete, setIsSetupComplete] = useState(false);
 
-  // Return early if `id` is undefined
   if (!id) {
     return <p className="text-center text-3xl font-bold text-black">Invalid Meeting ID</p>;
   }
