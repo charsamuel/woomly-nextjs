@@ -11,7 +11,7 @@ const isPublicRoute = createRouteMatcher([
 ]);
 
 // Middleware function
-export default clerkMiddleware((auth, req) => {
+export default clerkMiddleware((auth: any, req: any) => {
   // Only protect routes that aren't public
   if (!isPublicRoute(req)) {
     return auth.protect(); // Handles async protection of protected routes
@@ -26,3 +26,21 @@ export const config = {
     '/(api|trpc)(.*)', // Always apply middleware for API routes
   ],
 };
+
+// const isPublicRoute = createRouteMatcher([
+//   '/',
+//   '/upcoming',
+//   '/meeting(.*)',
+//   '/previous',
+//   '/recordings',
+//   '/personal-room',
+// ]);
+
+// export default clerkMiddleware((auth: any, req: any) => {
+//   if (!isPublicRoute(request)) 
+//     await auth.protect()
+// });
+
+// export const config = {
+//   matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
+// };
