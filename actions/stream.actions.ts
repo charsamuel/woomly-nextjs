@@ -1,5 +1,4 @@
 'use server';
-
 import { useAuth } from '@clerk/nextjs';
 import { StreamClient } from '@stream-io/node-sdk';
 
